@@ -70,6 +70,9 @@ try:
 except PdfReadError as e:
     st.error(f"Couldn't read the handbook PDF in `{DATA_DIR}`. It may be corrupt. Details: {e}")
     st.stop()
+except APIError as e:
+    st.error(f"Gemini rejected the request. Check that GEMINI_API_KEY in `.env` is valid. Details: {e}")
+    st.stop()
 except OSError as e:
     st.error(
         "Couldn't load the handbook or the embedding model. "
