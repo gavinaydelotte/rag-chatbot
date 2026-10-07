@@ -12,7 +12,7 @@ from pypdf.errors import PdfReadError
 
 load_dotenv()
 
-DATA_DIR = Path("data")
+DATA_DIR = Path(__file__).resolve().parent / "data"
 LLM_MODEL = "gemini-3.5-flash-lite"
 EMBED_MODEL = "BAAI/bge-small-en-v1.5"
 
